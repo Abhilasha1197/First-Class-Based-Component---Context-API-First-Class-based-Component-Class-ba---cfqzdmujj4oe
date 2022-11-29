@@ -9,13 +9,19 @@ class App extends React.Component {
     enrollmentNo: "12345678", 
     age: 34
   }
-  }
-  render(){
+}
+  handleIncrease(){
+    this.setState({
+        age: this.state.age + 1
+    })
+}
+
+   render(){
     return (
         <>
         <h1>Hello, my name is {this.state.name}</h1>
         <p>I am {this.state.age} years old and my enrollment no is {this.state.enrollmentNo}</p>
-        <button onClick={() =>{this.state.age = this.state.age+1}} ></button>
+        <button onClick={this.handleIncrease.bind(this)}>increase</button>
         </>
     )
   }
